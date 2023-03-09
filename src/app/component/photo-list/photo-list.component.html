@@ -1,0 +1,28 @@
+
+<h2>Partie recherche</h2>
+<div class="tl">
+  <h3>Pixaby Image Search</h3>
+</div>
+
+<p>Search for images</p>
+<form #searchForm="ngForm" (ngSubmit)="search(searchForm)">
+    <input type="text" name="searchTerm" [(ngModel)]="searchTerm" />
+    <button type="submit">Find images</button>
+  </form>
+
+
+  
+  <h2>Partie Résultat</h2>
+
+  <p>Resulats</p>
+
+  <div class="grid-container">
+    <app-photo-single class="grid-item" *ngFor="let p of photos$|async " [photo]="p"></app-photo-single>
+  
+          
+  </div>
+  
+  
+  
+  
+  
